@@ -22,14 +22,14 @@ def is_blank(s, trim=True):
 
 # === 验证：用“期望对照法”，自带预期值，自动打OK/FAIL ===
 if __name__ == "__main__":
-    excepted = {
+    expected = {
         None:True,      # null → 空
         "":True,        # 空串 → 空
         "   ":True,     # 全空白 → 空
         "a":False,      # 有字符 → 非空
         " hi ":False,   # 含非空白 → 非空
     }
-    for case, exp in excepted.items():
+    for case, exp in expected.items():
         got = is_blank(case)
         status = "OK" if got == exp else "FAIL"
         print(f"{status} | 输入={case!r:6} 期望={exp} 实际={got}")
